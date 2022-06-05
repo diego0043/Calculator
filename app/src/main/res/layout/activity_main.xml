@@ -17,8 +17,9 @@
         android:layout_marginTop="524dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
-        android:text="."
+        android:onClick="presionarDigito"
 
+        android:text="."
         android:textAlignment="center"
         android:textColor="#555a60"
         android:textSize="34sp"
@@ -37,8 +38,9 @@
         android:layout_marginTop="524dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
-        android:text="0"
+        android:onClick="presionarDigito"
 
+        android:text="0"
         android:textColor="#555a60"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btn2"
@@ -52,80 +54,85 @@
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="428dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/border_redondo"
-        android:backgroundTint="#FFFFFF"
+        android:onClick="clickOperacion"
         android:text="+"
 
         android:textColor="#F4AB41"
         android:textSize="34sp"
+        app:backgroundTint="@color/grey_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
-        tools:ignore="TextContrastCheck"
-       />
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn2"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="428dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
+
         android:text="2"
         android:textColor="#555a60"
-
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/btn3"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toEndOf="@+id/btn_ac"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn1"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="428dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
+
         android:text="1"
         android:textColor="#555a60"
-
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btn2"
         app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn3"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="428dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="32dp"
         android:background="#E3E9EC"
-        android:backgroundTint="#FFFFFF"
 
+        android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
         android:text="3"
         android:textColor="#555a60"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_suma"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn6"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="324dp"
         android:layout_marginEnd="32dp"
         android:background="#E3E9EC"
-        android:backgroundTint="#FFFFFF"
 
+        android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
         android:text="6"
         android:textColor="#555a60"
         android:textSize="24sp"
@@ -133,19 +140,20 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_resta"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn4"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="324dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
+
         android:text="4"
         android:textColor="#555a60"
-
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,8 +161,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_resta"
@@ -163,8 +170,9 @@
         android:layout_marginTop="324dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/border_redondo"
-        android:backgroundTint="#FFFFFF"
+        app:backgroundTint="@color/grey_light"
 
+        android:onClick="clickOperacion"
         android:text="-"
         android:textColor="#F4AB41"
         android:textSize="34sp"
@@ -172,19 +180,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TextContrastCheck"
-        />
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn5"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="324dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
+
         android:text="5"
         android:textColor="#555a60"
-
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btn2"
         app:layout_constraintEnd_toStartOf="@+id/btn6"
@@ -192,8 +201,7 @@
         app:layout_constraintStart_toEndOf="@+id/btn4"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_multiplicacion"
@@ -201,18 +209,20 @@
         android:layout_height="65dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/border_redondo"
-        android:backgroundTint="#FFFFFF"
 
+        app:backgroundTint="@color/grey_light"
+
+        android:onClick="clickOperacion"
         android:text="X"
         android:textColor="#F4AB41"
-        android:textSize="24sp"
 
+
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_resta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_division"
         app:layout_constraintVertical_bias="0.523"
-        tools:ignore="TextContrastCheck"
-       />
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_ac"
@@ -251,13 +261,15 @@
 
     <Button
         android:id="@+id/btn8"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
+
         android:text="8"
         android:textColor="#555a60"
-
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btn5"
         app:layout_constraintEnd_toStartOf="@+id/btn9"
@@ -265,8 +277,7 @@
         app:layout_constraintStart_toEndOf="@+id/btn_ac"
         app:layout_constraintTop_toBottomOf="@+id/btn_division3"
         app:layout_constraintVertical_bias="0.523"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_division"
@@ -276,8 +287,9 @@
         android:layout_marginTop="108dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/border_redondo"
-        android:backgroundTint="#e3e9ec"
+        app:backgroundTint="@color/grey_light"
 
+        android:onClick="clickOperacion"
         android:text="/"
         android:textColor="#F4AB41"
         android:textSize="24sp"
@@ -287,12 +299,14 @@
 
     <Button
         android:id="@+id/btn9"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginEnd="32dp"
         android:background="#E3E9EC"
-        android:backgroundTint="#FFFFFF"
 
+        android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
         android:text="9"
         android:textColor="#555a60"
         android:textSize="24sp"
@@ -300,36 +314,40 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_multiplicacion"
         app:layout_constraintTop_toBottomOf="@+id/btn_porcentaje"
         app:layout_constraintVertical_bias="0.523"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_division3"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="108dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
-        android:text="|"
-        android:textColor="#555a60"
 
+        android:textColor="#555a60"
         android:textSize="24sp"
+        app:icon="@drawable/backspace_icon_152920"
+        app:iconGravity="start"
+        app:iconSize="75px"
+        app:iconTint="#000000"
         app:layout_constraintEnd_toStartOf="@+id/btn_porcentaje"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toEndOf="@+id/btn_ac"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btn7"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
+        android:onClick="presionarDigito"
+
         android:text="7"
         android:textColor="#555a60"
-
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn4"
         app:layout_constraintEnd_toStartOf="@+id/btn8"
@@ -337,15 +355,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_ac"
         app:layout_constraintVertical_bias="0.523"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/txt_resultado"
         android:layout_width="0dp"
         android:layout_height="104dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="60dp"
         android:textAlignment="textEnd"
         android:textColor="#F4AB41"
         android:textSize="96sp"
@@ -375,7 +392,8 @@
         android:layout_marginStart="24dp"
         android:background="@drawable/border_rectangular"
         android:backgroundTint="#E3E9EC"
-        android:backgroundTintMode="add"
+        app:backgroundTint="@color/grey_light"
+        android:onClick="resultado"
         android:text="="
         android:textAlignment="center"
         android:textColor="#F4AB41"
@@ -385,5 +403,20 @@
         app:layout_constraintStart_toEndOf="@+id/btn_punto"
         app:layout_constraintTop_toBottomOf="@+id/btn_suma"
         app:layout_constraintVertical_bias="0.444" />
+
+    <TextView
+        android:id="@+id/txt_operacion"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="#F4AB41"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txt_resultado"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
