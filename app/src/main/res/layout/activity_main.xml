@@ -226,21 +226,22 @@
 
     <Button
         android:id="@+id/btn_ac"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="67dp"
         android:layout_height="65dp"
         android:layout_marginTop="108dp"
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
+        android:onClick="limpiarCampos"
+
         android:text="AC"
         android:textColor="#F4AB41"
-
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_procedimiento"
-        tools:ignore="TextContrastCheck"
-        style="?android:attr/borderlessButtonStyle"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_porcentaje"
@@ -325,6 +326,7 @@
         android:background="#E3E9EC"
         android:backgroundTint="#FFFFFF"
 
+        android:onClick="eliminarNumero"
         android:textColor="#555a60"
         android:textSize="24sp"
         app:icon="@drawable/backspace_icon_152920"
