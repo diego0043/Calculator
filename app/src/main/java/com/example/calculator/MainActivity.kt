@@ -86,100 +86,101 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickOperacion(view: View){
-
-        if(txtRes.text.toString().equals("")) {
-            hayPunto = false
-
-            numero = txtPro.text.toString().toDouble()
-            var num_text: String = txtPro.text.toString()
-            txtPro.setText("")
-
-            when(view.id){
-                //suma
-                R.id.btn_suma -> {
-                    txtRes.setText(num_text)
-                    txtOpe.setText("+")
-                    operacion = 1
-                }
-
-                //resta
-                R.id.btn_resta -> {
-                    txtRes.setText(num_text)
-                    txtOpe.setText("-")
-                    operacion = 2
-                }
-
-                //multiplicacion
-                R.id.btn_multiplicacion -> {
-                    txtRes.setText(num_text)
-                    txtOpe.setText("*")
-                    operacion = 3
-                }
-
-                //division
-                R.id.btn_division -> {
-                    txtRes.setText(num_text)
-                    txtOpe.setText("/")
-                    operacion = 4
-                }
-
-
-            }
-        }else{
-
-            if (!txtPro.text.toString().equals("") && !txtRes.text.toString().equals("")){
-                var resultado: Double = 0.0
+        if (!(txtPro.text.toString().equals("") && txtRes.text.toString().equals("")) ){
+            if(txtRes.text.toString().equals("")) {
                 hayPunto = false
+
+                numero = txtPro.text.toString().toDouble()
+                var num_text: String = txtPro.text.toString()
+                txtPro.setText("")
 
                 when(view.id){
                     //suma
                     R.id.btn_suma -> {
-                        resultado = operaciones(txtRes, txtPro, operacion)
-                        txtRes.setText(resultado.toString())
-                        txtPro.setText("")
+                        txtRes.setText(num_text)
                         txtOpe.setText("+")
                         operacion = 1
                     }
 
                     //resta
                     R.id.btn_resta -> {
-                        resultado = operaciones(txtRes, txtPro, operacion)
-                        txtRes.setText(resultado.toString())
-                        txtPro.setText("")
+                        txtRes.setText(num_text)
                         txtOpe.setText("-")
                         operacion = 2
                     }
 
                     //multiplicacion
                     R.id.btn_multiplicacion -> {
-                        resultado = operaciones(txtRes, txtPro, operacion)
-                        txtRes.setText(resultado.toString())
-                        txtPro.setText("")
+                        txtRes.setText(num_text)
                         txtOpe.setText("*")
                         operacion = 3
                     }
 
                     //division
                     R.id.btn_division -> {
-                        resultado = operaciones(txtRes, txtPro, operacion)
-                        txtRes.setText(resultado.toString())
-                        txtPro.setText("")
+                        txtRes.setText(num_text)
                         txtOpe.setText("/")
                         operacion = 4
                     }
 
 
                 }
+            }else{
+
+                if (!txtPro.text.toString().equals("") && !txtRes.text.toString().equals("")){
+                    var resultado: Double = 0.0
+                    hayPunto = false
+
+                    when(view.id){
+                        //suma
+                        R.id.btn_suma -> {
+                            resultado = operaciones(txtRes, txtPro, operacion)
+                            txtRes.setText(resultado.toString())
+                            txtPro.setText("")
+                            txtOpe.setText("+")
+                            operacion = 1
+                        }
+
+                        //resta
+                        R.id.btn_resta -> {
+                            resultado = operaciones(txtRes, txtPro, operacion)
+                            txtRes.setText(resultado.toString())
+                            txtPro.setText("")
+                            txtOpe.setText("-")
+                            operacion = 2
+                        }
+
+                        //multiplicacion
+                        R.id.btn_multiplicacion -> {
+                            resultado = operaciones(txtRes, txtPro, operacion)
+                            txtRes.setText(resultado.toString())
+                            txtPro.setText("")
+                            txtOpe.setText("*")
+                            operacion = 3
+                        }
+
+                        //division
+                        R.id.btn_division -> {
+                            resultado = operaciones(txtRes, txtPro, operacion)
+                            txtRes.setText(resultado.toString())
+                            txtPro.setText("")
+                            txtOpe.setText("/")
+                            operacion = 4
+                        }
+
+
+                    }
+
+                }
 
             }
-
         }
+
+
     }
 
     fun resultado(view: View){
-        if(txtPro.text.equals("") || txtRes.text.equals("")){
-            operacion = 0
-        }else {
+        if(!(txtPro.text.equals("") || txtRes.text.equals(""))){
             var num1: Double = txtRes.text.toString().toDouble()
             var num2: Double = txtPro.text.toString().toDouble()
             var resultado: Double = 0.0
@@ -212,6 +213,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 //division
                 3 -> {
+                    resultado = num1 / num2
+                    txtRes.setText(resultado.toString())
+                    txtPro.setText("")
+                    txtOpe.setText("")
+                    operacion = 0
                     if(txtPro.text.toString().equals("0")) {
                         resultado = num1 / 1
                         txtRes.setText(resultado.toString())
@@ -245,12 +251,20 @@ class MainActivity : AppCompatActivity() {
 
     fun eliminarNumero(view: View) {
 
-
         var nuevoNumero:String = txtPro.text.toString()
-        var salida:String = nuevoNumero.replaceFirst(".$".toRegex(), "")
-        txtPro.setText(salida.toString())
 
-
+        if(!nuevoNumero.equals("")){
+            var esPunto:String = nuevoNumero.last().toString()
+            var salida:String = ""
+            if(esPunto.equals(".")){
+                salida = nuevoNumero.replaceFirst(".$".toRegex(), "")
+                hayPunto = false
+                txtPro.setText(salida.toString())
+            }else{
+                salida = nuevoNumero.replaceFirst(".$".toRegex(), "")
+                txtPro.setText(salida.toString())
+            }
+        }
 
     }
 }
